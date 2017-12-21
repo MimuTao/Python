@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?><diagrules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" schemaversion="2">
+  <UIF uifversion="0">
+    <uifmanifestxml/>
+  </UIF>
+  <scenarios>
+    <scenario schemaversion="2" scenarioid="{057ddda8-634b-4218-b599-caf35461e003}" scenarioname="Edge_Compete_RedstonePort_TestD_Show" maxcancelreports="-1" maxcompletionescalations="-1" mintimebetweencompletionescalationsms="1000" scenariolifespanindays="730" matchbehavior="oldest" maxinflightinstances="1">
+      <triggers>
+        <trigger triggername="Microsoft-Windows-Shell-Launcher.AppLaunch">
+          <etwtrigger>
+            <provider>{3d6120a6-0986-51c4-213a-e2975903051d}</provider>
+            <keywords>0x0000400000000000</keywords>
+          </etwtrigger>
+        </trigger>
+      </triggers>
+      <escalation uploadcab="0">
+        <action actionname="Soft Landing Action">
+          <softlandingaction>
+            <campaignid>e9d21752-8fc9-4793-b42e-33105b078a51</campaignid>
+            <ruletype>1</ruletype>
+          </softlandingaction>
+        </action>
+      </escalation>
+      <filters>
+        <filter appliesto="scenario" filtername="Test Systems False">
+          <registryfilter>
+            <hive>HKEY_LOCAL_MACHINE</hive>
+            <keyname>SOFTWARE\Microsoft\SQMClient</keyname>
+            <valuename>IsTest</valuename>
+            <valuetype>REG_NONE</valuetype>
+            <value/>
+            <operation>notexists</operation>
+          </registryfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch2">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome.B5K2XFZGJ2N7BGCHEYPHGPQRSE</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch3">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome.UserData.Profile1</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch4">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome.O3I2RB4XVEQJPEATC73AQCUXMY</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch5">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome.EUBJVTBRV7YAETKIEOIYWONPXE</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Chrome Launch6">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Chrome.UserData.Profile4</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Internet Explorer Launch">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>Microsoft.InternetExplorer.Default</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Firefox Launch">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>E7CF176E110C211B</value>
+          </singletriggerpropertyfilter>
+        </filter>
+        <filter appliesto="trigger" filtername="Opera Launch">
+          <singletriggerpropertyfilter>
+            <triggername>Microsoft-Windows-Shell-Launcher.AppLaunch</triggername>
+            <propertyselector>
+              <propertykey>
+                <name>AppId</name>
+              </propertykey>
+            </propertyselector>
+            <mathoperation>add</mathoperation>
+            <constant>0</constant>
+            <operation>equal</operation>
+            <value>OperaSoftware.OperaWebBrowser.1433742118</value>
+          </singletriggerpropertyfilter>
+        </filter>
+      </filters>
+      <scxml version="1.0" datamodel="custom" initial="_start" xmlns="http://www.w3.org/2005/07/scxml">
+        <state id="_start">
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T0">
+            <filter>Chrome Launch</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T4">
+            <filter>Chrome Launch2</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T5">
+            <filter>Chrome Launch3</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T6">
+            <filter>Chrome Launch4</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T7">
+            <filter>Chrome Launch5</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T8">
+            <filter>Chrome Launch6</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T1">
+            <filter>Internet Explorer Launch</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T2">
+            <filter>Firefox Launch</filter>
+          </transition>
+          <transition event="Microsoft-Windows-Shell-Launcher.AppLaunch" target="_complete" name="T3">
+            <filter>Opera Launch</filter>
+          </transition>
+        </state>
+        <final id="_complete"/>
+      </scxml>
+    </scenario>
+  </scenarios>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>/bEM+jqg4zxk6h0I2JYGPNpGXIM=</DigestValue></Reference></SignedInfo><SignatureValue>
+    C+y+g6agecyIX0N5jU5bf6m+dPxqD+r0QSQIhFv57PvHPowIyxEPutyQi6X/xaZ4UmP1tBx1
+    MkvmG16QrIR0u30oc/DiFriyEwQuNe+V7MeIaOgGxRWjUEGqzJJgo0PKNwCf8Ao2eLehpSHc
+    qmw1UhBm7T03yoC8w5jKSs2EeDrowTSfvNss2DdjWOhwkNsQdKq49BAtlIV33sP3JWt0y2B7
+    3uE8+xzu50gz6xNIbQiuiupF382kXHfMjOQg71iYG+P4Pecu2SXZK523Cmalu/QWZp+iXfVt
+    OhRdKTvoeJAHXTjO83wroX9oQx2bn0DRA/esr1kTYoJ6uBlIPuRj6g==
+  </SignatureValue><KeyInfo>
+      <KeyValue>
+        <RSAKeyValue>
+          <Modulus>
+            20uL6QNqX8gbXQoFOeTVDpLQxOGL6KQNBRlYwDzXKd2Jt2huS59+vJq9VIY5qfE4NRbmHaz7
+            rmvcCTDvuB7fbPhKmlWXSMgjibNZJzS9lTFHnA/OQDUyN/7p80+kGqSzebyAmz8kmMTRb9V/
+            50ON5Nzy0uauZu0EOiGUplfcA9ssxhv/KzmoXb9V/t1J31QFlKsz36R9MaZNvVbPFjFoP4Rr
+            HG3z7tUwiu5lG563CBwpfpO98n1Cdjgi1Ht89Li5cZ7DlPSChjWCpnS9AjP6VIaFoyW+qole
+            4jlfJkGYGt655kaFeLtRMgJH7OT5H70EUXXmEpt264WXFCIKoRP3YQ==
+          </Modulus>
+          <Exponent>AQAB</Exponent>
+        </RSAKeyValue>
+      </KeyValue>
+      <X509Data>
+        <X509Certificate>
+          MIIE7TCCA9WgAwIBAgITMwAAAUCWqe5wVv7MBwABAAABQDANBgkqhkiG9w0BAQUFADB5MQsw
+          CQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
+          A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNyb3NvZnQgQ29kZSBT
+          aWduaW5nIFBDQTAeFw0xNjA4MTgyMDE3MTdaFw0xNzExMDIyMDE3MTdaMIGDMQswCQYDVQQG
+          EwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+          TWljcm9zb2Z0IENvcnBvcmF0aW9uMQ0wCwYDVQQLEwRNT1BSMR4wHAYDVQQDExVNaWNyb3Nv
+          ZnQgQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDbS4vpA2pf
+          yBtdCgU55NUOktDE4YvopA0FGVjAPNcp3Ym3aG5Ln368mr1Uhjmp8Tg1FuYdrPuua9wJMO+4
+          Ht9s+EqaVZdIyCOJs1knNL2VMUecD85ANTI3/unzT6QapLN5vICbPySYxNFv1X/nQ43k3PLS
+          5q5m7QQ6IZSmV9wD2yzGG/8rOahdv1X+3UnfVAWUqzPfpH0xpk29Vs8WMWg/hGscbfPu1TCK
+          7mUbnrcIHCl+k73yfUJ2OCLUe3z0uLlxnsOU9IKGNYKmdL0CM/pUhoWjJb6qiV7iOV8mQZga
+          3rnmRoV4u1EyAkfs5PkfvQRRdeYSm3brhZcUIgqhE/dhAgMBAAGjggFhMIIBXTATBgNVHSUE
+          DDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUnOXobYJXrjck3upeqcRfkB3O2XswUgYDVR0RBEsw
+          SaRHMEUxDTALBgNVBAsTBE1PUFIxNDAyBgNVBAUTKzIyOTgwMytmNzg1YjFjMC01ZDlmLTQz
+          MTYtOGQ2YS03NGFlNjQyZGRlMWMwHwYDVR0jBBgwFoAUyxHoytK0FlgByTcuMxYWuUyaCh8w
+          VgYDVR0fBE8wTTBLoEmgR4ZFaHR0cDovL2NybC5taWNyb3NvZnQuY29tL3BraS9jcmwvcHJv
+          ZHVjdHMvTWljQ29kU2lnUENBXzA4LTMxLTIwMTAuY3JsMFoGCCsGAQUFBwEBBE4wTDBKBggr
+          BgEFBQcwAoY+aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3BraS9jZXJ0cy9NaWNDb2RTaWdQ
+          Q0FfMDgtMzEtMjAxMC5jcnQwDQYJKoZIhvcNAQEFBQADggEBAGvkVuPXEx0gQPlt6d5O210e
+          xmwmo/flCYAM/1fhtNTZ+VxI4QZ/wqRUuJZ69Y3JgxMMcb/4/LsuzBVz8wBrTiWq9MQKcpRS
+          n3dNKZMoCDEW2d9udKvE6E4VsZkFRE4aSUksrHnuv4VPhG5H777Y0otJaQ4pg/WlvaMbIa2i
+          pT6QIJz1nxI9ell1ZO/ao4WEMhICAmpkdwGmOZiz7qIoSWysJDIoPqiLZiz7AtiDLyOSkfdX
+          Zf+k1elRCJT21v3A1cAgRf1DSU957mQZf2BO4sTKU04f+1qRDVvNJIN8c+jJQncSXzEmybDO
+          U4phVPfCjXKZ8cW2HX6qkIQEOpd5rWA=
+        </X509Certificate>
+      </X509Data>
+      <X509Data>
+        <X509Certificate>
+          MIIFmTCCA4GgAwIBAgIQea0WoUqgpa1Mc1j0BxMuZTANBgkqhkiG9w0BAQUFADBfMRMwEQYK
+          CZImiZPyLGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRN
+          aWNyb3NvZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMDEwNTA5MjMxOTIyWhcN
+          MjEwNTA5MjMyODEzWjBfMRMwEQYKCZImiZPyLGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJ
+          bWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3NvZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3Jp
+          dHkwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDzXfqAZ9Rap6kMLJAg0DUIPHWE
+          zbcHiZyJ2t7Ow2D6kWhanpRxKRh2fMLgyCV2lA5Y+gQ0Nubfr/eAuulYCyuT5Z0F43cikfc0
+          ZDwikR1e4QmQvBT+/HVYGeF5tweSo66IWQjYnwfKA1j8aCltMtfSqMtL/OELSDJP5uu4rU/k
+          XG8TlJnbldV126gat5SRtHdb9UgMj2p5fRRwBH1tr5D12nDYR7e/my9s5wW34RFgrHmRFHzF
+          1qbk4X7Vw37lktI8ALU2gt554W3ztW74nzPJy1J9c5g224uha6KVl5uj3sJNJv8GlmclBsjn
+          rOTuEjOVMZnINQhONMp5U9W1vmMyWUA2wKVOBE0921sHM+RYv+8/U2TYQlk1V/0PRXwkBE2e
+          1jh0EZcikM5oRHSSb9VLb7CG48c2QqDQ/MHAWvmjYbkwR3GWChawkcBCle8Qfyhq4yofseTN
+          Az93cQTHIPxJDx1FiKTXy36IrY4t7EXbxFEEySr87IaemhGXW97OU4jm4rf9rJXCKEDb7wSQ
+          34EzOdmyRaUjhwalVYkxuwYtYA5BGH0fLrWXyxHrFdUkpZTvFRSJ/Utz+jJb/NEzAPlZYnAH
+          Muouq0Ate8rdIWcbMJmPFqojqEHRsG4RmzbE3kB0nOFYZcFgHnpbOMiPuwQmfNQWQOW2a2yq
+          hv0Av87BNQIDAQABo1EwTzALBgNVHQ8EBAMCAcYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4E
+          FgQUDqyCYEBWJ5flJRP8KuEKU5VZ5KQwEAYJKwYBBAGCNxUBBAMCAQAwDQYJKoZIhvcNAQEF
+          BQADggIBAMURTQM6YN1dUhF3j7K7NsiyBb+0t6jYIJ1cEwO2HCL6BhM1tshj1JpHbyZX0lXx
+          BLEmX9apUGigvNK4bszD6azfGc14rFl0rGY0NsQbPmw4TDMOMBINoyb+UVMA/69aToQNDx/k
+          bQUuToVLjWwzb1TSZKu/UK99ejmgN+1jAw/8EwbOFjbUVDuVG1FiOuVNF9QFOZKaJ6hbqr3s
+          u77jIIlgcWxWs6UT0G0OI36VA+1oPfLYY7hrTbboMLXhypRL96KqXZkwsj2nwlFsKCABJCcr
+          SwC3nRFrcL6yEIK8DJto0I07JIeqmShynTNfWZC99d6TnjpiWjQ54ohVHbkGsMGJay3XacMZ
+          EjaE0Mmg2v8vaXiy5Xra69cMwPe9Yxe4ORM4ojZbe/KFVmodZGLBOOKqv1FmopT1EpxmIhBr
+          8rcwki3yKfA9OxRDaKLxnCk3y844ICVtfGfzfiQSJAMIgUfspZ6X9RjXz7vV73aW7/3O21ad
+          laBC+ZdY4dcxItNfWeY+biIA6kOEtiXb2fMIVmjAZGsdfOy2k6JiV24u2OdYj8QxSSbd3ik1
+          h/UwcXBbFDxpvYkSfesuo/7Yf56CWlIKK8FDK9kwiJ/IEPuJjeahhXUzfmye23MTZGJppS99
+          ypZtn/gETTCSPW4hFCHJPeDD/YprnUr90aGdmUN3P7Da
+        </X509Certificate>
+      </X509Data>
+      <X509Data>
+        <X509Certificate>
+          MIIFvDCCA6SgAwIBAgIKYTMmGgAAAAAAMTANBgkqhkiG9w0BAQUFADBfMRMwEQYKCZImiZPy
+          LGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3Nv
+          ZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMTAwODMxMjIxOTMyWhcNMjAwODMx
+          MjIyOTMyWjB5MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMH
+          UmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNy
+          b3NvZnQgQ29kZSBTaWduaW5nIFBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+          ALJyWVwZMGS/HZpgICBCmXZTbD4b1m/My/Hqa/6XFhDg3zp0gxq3L6Ay7P/ewkJOI9VyANs1
+          VwqJyq4gSfTwaKxNS42lvXlLcZtHB9r9Jd+ddYjPqnNEf9eB2/O98jakyVxF3K+tPeAoaJca
+          p6Vyc1bxF5Tk/TWUcqDWdl8ed0WDhTgW0HNbBbpnUo2lsmkv2hkL/pJ0KeJ2L1TdFDBZ+NKN
+          Yv3LyV9GMVC5JxPkQDDPcikQKCLHN049oDI9kM2hOAaFXE5WgigqBTK3S9dPY+fSLWLxRT3n
+          rAgA9kahntFbjCZT6HqqSvJGzzc8OJ60d1ylF56NyxGPVjzBrAlfA9MCAwEAAaOCAV4wggFa
+          MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFMsR6MrStBZYAck3LjMWFrlMmgofMAsGA1Ud
+          DwQEAwIBhjASBgkrBgEEAYI3FQEEBQIDAQABMCMGCSsGAQQBgjcVAgQWBBT90TFO0yaKleGY
+          YDuoMW+mPLzYLTAZBgkrBgEEAYI3FAIEDB4KAFMAdQBiAEMAQTAfBgNVHSMEGDAWgBQOrIJg
+          QFYnl+UlE/wq4QpTlVnkpDBQBgNVHR8ESTBHMEWgQ6BBhj9odHRwOi8vY3JsLm1pY3Jvc29m
+          dC5jb20vcGtpL2NybC9wcm9kdWN0cy9taWNyb3NvZnRyb290Y2VydC5jcmwwVAYIKwYBBQUH
+          AQEESDBGMEQGCCsGAQUFBzAChjhodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2NlcnRz
+          L01pY3Jvc29mdFJvb3RDZXJ0LmNydDANBgkqhkiG9w0BAQUFAAOCAgEAWTk+fyZGr+tvQLEy
+          tWrrDi9uqEn361917Uw7LddDrQv+y+ktMaMjzHxQmIAhXaw9L0y6oqhWnONwu7i0+Hm1SXL3
+          PupBf8rhDBdpy6WcIC36C1DEVs0t40rSvHDnqA2iA6VW4LiKS1fylUKc8fPv7uOGHzQ8uFaa
+          8FMjhSqkghyT4pQHHfLiTviMocroE6WRTsgb0o9ylSpxbZsa+BzwU9ZnzCL/XB3Nooy9J7J5
+          Y1ZEolHN+emjWFbdmwJFRC9f9Nqu1IIybvyklRPk62nnqaIsvsgrEA5ljpnb9aL6EiYJZTiU
+          8XofSrvR4Vbo0HiWGFzJNRZf3ZMdSY4tvq00RBzuEBUaAF3dNVshzpjHCe6FDoxPbQ4TTj18
+          KUicctHzbMrB7HCjV5JXfZSNoBtIA1r3z6NnCnSlNu0tLxfI5nI3EvRvsTxngvlSso0zFmUe
+          DordEN5k9G/ORtTTF+l5xAS00/ss3x+KnqwK+xMnQK3k+eGpf0a7B2BHZWBATrBC7E7ts3Z5
+          2Ao0CW0cgDEf4g5U3eWh++VHEK1kmP9QFi58vwUheuKVQSdpw5OPlcmN2Jshrg1cnPCiroZo
+          gwxqLbt2awAdlq3yFnv2FoMkuYjPaqhHMS+a3ONxPdcAfmJH0c6IybgY+g5yjcGjPa8CQGr/
+          aZuW4hCoELQ3UAjWwz0=
+        </X509Certificate>
+      </X509Data>
+    </KeyInfo><Object Id="ts-countersig"><X509Data><X509Certificate>MIIEwzCCA6ugAwIBAgITMwAAALfuAa/68MeouwAAAAAAtzANBgkqhkiG9w0BAQUFADB3MQswCQYD
+VQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+TWljcm9zb2Z0IENvcnBvcmF0aW9uMSEwHwYDVQQDExhNaWNyb3NvZnQgVGltZS1TdGFtcCBQQ0Ew
+HhcNMTYwOTA3MTc1ODQ1WhcNMTgwOTA3MTc1ODQ1WjCBszELMAkGA1UEBhMCVVMxEzARBgNVBAgT
+Cldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3Jh
+dGlvbjENMAsGA1UECxMETU9QUjEnMCUGA1UECxMebkNpcGhlciBEU0UgRVNOOkJCRUMtMzBDQS0y
+REJFMSUwIwYDVQQDExxNaWNyb3NvZnQgVGltZS1TdGFtcCBTZXJ2aWNlMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAuCMjQSw3ep1mSndFRK0xgVRgm9wSl3i2llRtDdxzAWN9gQtYAE3h
+JP0/pV/7HHkshYPfMIRf7Pm/dxSsAN+7ATnNUk+wpe46rfe0FDNxoE6CYaiMSNjKcMXH55bGXNnw
+rrcsMaZrVXzSIQcmAhUQw1jdLntbdTyCAwJ2UqF/XmVtWV/U466G8JP8VGLddeaucY0YKhgYwMnt
+Sp9ElCkVDcUP01L9pgn9JmKUfD3yFt2p1iZ9VKCrlla10JQwe7aNW7xjzXxvcvlVIXeA4QSabo4d
+q8HUh7JoYMqh3ufr2yNgTs/rSxG6D5ITcI0PZkH4PYjO2GbGIcOFRVOf5RxVrwIDAQABo4IBCTCC
+AQUwHQYDVR0OBBYEFJZnqouaH5kw+n1zGHTDXjCT5OMAMB8GA1UdIwQYMBaAFCM0+NlSRnAK7UD7
+dvuzK7DDNbMPMFQGA1UdHwRNMEswSaBHoEWGQ2h0dHA6Ly9jcmwubWljcm9zb2Z0LmNvbS9wa2kv
+Y3JsL3Byb2R1Y3RzL01pY3Jvc29mdFRpbWVTdGFtcFBDQS5jcmwwWAYIKwYBBQUHAQEETDBKMEgG
+CCsGAQUFBzAChjxodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2NlcnRzL01pY3Jvc29mdFRp
+bWVTdGFtcFBDQS5jcnQwEwYDVR0lBAwwCgYIKwYBBQUHAwgwDQYJKoZIhvcNAQEFBQADggEBAG7J
++Fdd7DgxG6awnA8opmQfW5DHnNDC/JPLof1sA8NqczymcnWIHmlWhqA7TUy4q02lKenO+R/vbmHn
+a1BrC/KkczAyhOzkI2WFU3PeYubv8EjKfYPmrNvS8fCsHJXj3N6fuFwXkHmCVBjTchK93auG09ck
+BYx5Mt4zW0TUbbw4/QAZX64rbut6Aw/C1bpxqBb8vvMssBB9Hw2m8ApFTApaEVOE/sKemVlq0VIo
+0fCXqRSTLb6/QOav3S8S+N34RBNx/aKKOFzBDy6Ni45QvtRfBoNX3f4/mm4TFdNs+SeLQA+0oBs7
+UgdoxGSpX6vsWaH8dtlBw3NZK7SFi9bBMI4=</X509Certificate></X509Data><X509Data><X509Certificate>MIIGBzCCA++gAwIBAgIKYRZoNAAAAAAAHDANBgkqhkiG9w0BAQUFADBfMRMwEQYKCZImiZPyLGQB
+GRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3NvZnQgUm9v
+dCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMDcwNDAzMTI1MzA5WhcNMjEwNDAzMTMwMzA5WjB3
+MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
+A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSEwHwYDVQQDExhNaWNyb3NvZnQgVGltZS1TdGFt
+cCBQQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCfoWyx39tIkip8ay4Z4b3i48WZ
+USNQrc7dGE4kD+7Rp9FMrXQwIBHrB9VUlRVJlBtCkq6YXDAm2gBr6Hu97IkHD/cOBJjwicwfyzMk
+h53y9GccLPx754gd6udOo6HBI1PKjfpFzwnQXq/QsEIEovmmbJNn1yjcRlOwhtDlKEYuJ6yGT1VS
+DOQDLPtqkJAwbofzWTCd+n7Wl7PoIZd++NIT8wi3U21StEWQn0gASkdmEScpZqiX5NMGgUqi+YSn
+EUcUCYKfhO1VeP4Bmh1QCIUAEDBG7bfeI0a7xC1Un68eeEExd8yb3zuDk6FhArUdDbH895uyAc4i
+S1T/+QXDwiALAgMBAAGjggGrMIIBpzAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQjNPjZUkZw
+Cu1A+3b7syuwwzWzDzALBgNVHQ8EBAMCAYYwEAYJKwYBBAGCNxUBBAMCAQAwgZgGA1UdIwSBkDCB
+jYAUDqyCYEBWJ5flJRP8KuEKU5VZ5KShY6RhMF8xEzARBgoJkiaJk/IsZAEZFgNjb20xGTAXBgoJ
+kiaJk/IsZAEZFgltaWNyb3NvZnQxLTArBgNVBAMTJE1pY3Jvc29mdCBSb290IENlcnRpZmljYXRl
+IEF1dGhvcml0eYIQea0WoUqgpa1Mc1j0BxMuZTBQBgNVHR8ESTBHMEWgQ6BBhj9odHRwOi8vY3Js
+Lm1pY3Jvc29mdC5jb20vcGtpL2NybC9wcm9kdWN0cy9taWNyb3NvZnRyb290Y2VydC5jcmwwVAYI
+KwYBBQUHAQEESDBGMEQGCCsGAQUFBzAChjhodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2Nl
+cnRzL01pY3Jvc29mdFJvb3RDZXJ0LmNydDATBgNVHSUEDDAKBggrBgEFBQcDCDANBgkqhkiG9w0B
+AQUFAAOCAgEAEJeKw1wDRDbd6bStd9vOeVFNAbEudHFbbQwTq86+e4+4LtQSooxtYrhXAstOIBNQ
+md16QOJXu69YmhzhHQGGrLt48ovQ7DsB7uK+jwoFyI1I4vBTFd1Pq5Lk541q1YDB5pTyBi+FA+mR
+KiQicPv2/OR4mS4N9wficLwYTp2OawpylbihOZxnLcVRDupiXD8WmIsgP+IHGjL5zDFKdjE9K3IL
+yOpwPf+FChPfwgphjvDXuBfrTot/xTUrXqO/67x9C0J71FNyIe4wyrt4ZVxbARcKFA7S2hSY9Ty5
+ZlizLS/n+YWGzFFW6J1wlGysOUzU9nm/qhh6YinvopspNAZ3GmLJPR5tH4LwC8csu89Ds+X57H21
+46SodDW4TsVxIxImdgs8UoxxWkZDFLyzs7BNZ8ifQv+AeSGAnhUwZuhCEl4ayJ4iIdBD6Svpu/RI
+zCzU2DKATCYqSCRfWupW76bemZ3KOm+9gSd0BhHudiG/m4LBJ1S2sWo9iaF2YbRuoROmv6pH8BJv
+/YoybLL+31HIjCPJZr2dHYcSZAI9La9Zj7jkIeW1sMpjtHhUBdRBLlCslLCleKuzoJZ1GtmShxN1
+Ii8yqAhuoFuMJb+g74TKIdbrHk/Jmu5J4PcBZW+JC33Iacjmbuqnl84xKf8OxVtc2E0bodj6L54/
+LlUWa8kTo/0=</X509Certificate></X509Data><CounterSignature xmlns="http://schemas.microsoft.com/xmldsig/timestamp/2003" ts-format="cms-timestamp-message">MIIG0AYJKoZIhvcNAQcCoIIGwTCCBr0CAQMxCzAJBgUrDgMCGgUAMIIBEwYJKoZIhvcNAQcBoIIB
+BASCAQAL7L6DpqB5zIhfQ3mNTlt/qb50/GoP6vRBJAiEW/ns+8c+jAjLEQ+63JCLpf/FpnhSY/W0
+HHUyS+YbXpCshHS7fShz8OIWuLITBC4175Xsx4ho6AbFFaNQQarMkmCjQ8o3AJ/wCjZ4t6GlIdyq
+bDVSEGbtPTfKgLzDmMpKzYR4OujBNJ+82yzYN2NY6HCQ2xB0qrj0EC2UhXfew/cla3TLYHve4Tz7
+HO7nSDPrE0htCK6K6kXfzaRcd8yM5CDvWJgb4/g95y7ZJdkrnbcKZqW79BZmn6Jd9W06FF0pO+h4
+kAddOM7zfCuhf2hDHZufQNED96yvWRNignq4GUg+5GPqoIIDeaGCA3UwggJdAgEBMIHjoYG5pIG2
+MIGzMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEe
+MBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMQ0wCwYDVQQLEwRNT1BSMScwJQYDVQQLEx5u
+Q2lwaGVyIERTRSBFU046QkJFQy0zMENBLTJEQkUxJTAjBgNVBAMTHE1pY3Jvc29mdCBUaW1lLVN0
+YW1wIFNlcnZpY2WiJQoBATAJBgUrDgMCGgUAAxUAGBmEkF52hEHV51ajX2sBi0yZEWCggcIwgb+k
+gbwwgbkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25k
+MR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xDTALBgNVBAsTBE1PUFIxJzAlBgNVBAsT
+Hm5DaXBoZXIgTlRTIEVTTjo1N0Y2LUMxRTAtNTU0QzErMCkGA1UEAxMiTWljcm9zb2Z0IFRpbWUg
+U291cmNlIE1hc3RlciBDbG9jazANBgkqhkiG9w0BAQUFAAIFANwYUgowIhgPMjAxNzAxMDUwNTAz
+MDZaGA8yMDE3MDEwNjA1MDMwNlowczA5BgorBgEEAYRZCgQBMSswKTAKAgUA3BhSCgIBADAGAgEA
+AgEYMAcCAQACAhhZMAoCBQDcGaOKAgEAMDYGCisGAQQBhFkKBAIxKDAmMAwGCisGAQQBhFkKAwGg
+CjAIAgEAAgMW42ChCjAIAgEAAgMHoSAwDQYJKoZIhvcNAQEFBQADggEBAD/ZIkWMneXkVr01u4L9
+TFURalsQyVKCG0OO4omy+PKbMR29Zr4UdeYm6xVFktCvadRNdnIR86ec1McbpsyxL3uIqPn+9aK5
+qZHnZzo0qE4sp/m48gdEbdZTqShLtUDmaue0UVGdsEGvmavkQSl6Ia9/bQPgSsdD01zx7sw4tx66
+4NqY0LMvYfni5nOvdYY+7dTFJbNrYxXWX2qZlVRCK2Rn2TnNOszy3KiwO0p7VO2prXkr6x9Vj1xf
+2CfpjurBcFJc1J9C6JLgQrU6g24OU4nN3Bn5qWz+kQAWOdKSkw0tekK69gszhd0Yd+ODYWg3qd2J
+YkpNaej+/sqAIHd+a3UxggIVMIICEQIBATCBjjB3MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2Fz
+aGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9u
+MSEwHwYDVQQDExhNaWNyb3NvZnQgVGltZS1TdGFtcCBQQ0ECEzMAAAC37gGv+vDHqLsAAAAAALcw
+CQYFKw4DAhoFAKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE3
+MDEwNTA4MjAyM1owIwYJKoZIhvcNAQkEMRYEFNBmimaww1uOQ10D/nilEEumxUftMA0GCSqGSIb3
+DQEBBQUABIIBAKnbAS5++0+XjdqVssiZbT4K/Hpcq5gUpMNVSQ39Lu6tkxQ7zzi1P0+GSaffqrL7
+Xg33nuKdYqm9XwSIdoS7aprkTOSd4kZt5CUN4RQN3+cIrBgG4dpl5JQrW4qOcDx8yP54EHxF0hJd
+PYr4DWjvmECyoAGVBZeAaR1xiy7jF+daQV7WSyqlbiPKM4OcqxlkYQNueg3rgOdsJXJ2JyXrYn7J
+4Ist/lNGSv35yaiRo9nDHhpRNwjCjz9cIzyHeEgaRcEqGSQdrICo1KTVKGE6UfniogM48u6Y5Eif
+3ppFeCIlhfAIJL7mItDpNN4OZTr2FX5YTMzaJlCAIkoXIYCe3BE=</CounterSignature></Object></Signature></diagrules>
