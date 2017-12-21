@@ -1,2 +1,2 @@
 # Python
-Repository for common exercise.
+This repository is used for common python programming excese.
